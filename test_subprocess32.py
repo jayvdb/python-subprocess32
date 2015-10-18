@@ -1929,8 +1929,8 @@ class Win32ProcessTestCase(BaseTestCase):
         returncode = p.poll()
         self.assert_(returncode is not None, "the subprocess did not terminate")
         if count > 1:
-            print >>sys.stderr, ("p.{}{} succeeded after "
-                                 "{} attempts".format(method, args, count))
+            print >>sys.stderr, ("p.{0}{1} succeeded after "
+                                 "{2} attempts".format(method, args, count))
         _, stderr = p.communicate()
         self.assertStderrEqual(stderr, '')
         self.assertEqual(p.wait(), returncode)
